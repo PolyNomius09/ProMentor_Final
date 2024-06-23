@@ -89,7 +89,7 @@ CREATE TABLE Calificaciones (
   calificacion INT NOT NULL CHECK (calificacion BETWEEN 1 AND 10),
   numero_profesor VARCHAR(20) NOT NULL,
   CONSTRAINT FK_UnidadAprendizaje FOREIGN KEY (id_unidadAprendizaje) REFERENCES UnidadAprendizaje(id_unidadAprendizaje),
-  -- Modificar la restricción FK_Usuario_Calificaciones en Calificaciones para ON DELETE CASCADE
+  -- Modificar la restricciï¿½n FK_Usuario_Calificaciones en Calificaciones para ON DELETE CASCADE
  CONSTRAINT FK_Usuario_Calificaciones FOREIGN KEY (boleta_usuario) REFERENCES Usuario(boleta_usuario) ON DELETE CASCADE,  -- Luego la re-crea con ON DELETE CASCADE
  CONSTRAINT FK_Asesor FOREIGN KEY (boleta_asesor) REFERENCES Asesor(boleta_asesor)
 );
@@ -108,35 +108,35 @@ SELECT * FROM Calificaciones;
 
 ---------------------------------------------------Registros-----------------------------------------------------
 INSERT INTO InformacionAsesoria (nombre_asesoria, tema_asesoria, descripcion_asesoria, cupo_disponible, aula_asesoria) VALUES
-('Redes de Computadoras', 'Protocolos de Comunicación', 'Estudio de los protocolos básicos de comunicación en redes.', 20, 'A101'),
-('Programación Avanzada', 'Python para Redes', 'Uso de Python para la gestión y automatización de redes.', 25, 'B202'),
-('Seguridad Informática', 'Criptografía', 'Introducción a la criptografía y su aplicación en la seguridad de la información.', 15, 'C303'),
-('Sistemas Operativos', 'Linux', 'Administración y uso de sistemas operativos basados en Linux.', 18, 'D404'),
-('Bases de Datos', 'SQL', 'Fundamentos y uso del lenguaje SQL para la gestión de bases de datos.', 22, 'E505'),
-('Desarrollo Web', 'HTML y CSS', 'Introducción al desarrollo de páginas web con HTML y CSS.', 30, 'F606'),
-('Redes Inalámbricas', 'Wi-Fi', 'Conceptos y configuración de redes inalámbricas Wi-Fi.', 28, 'G707'),
-('Programación', 'JavaScript', 'Fundamentos de la programación en JavaScript.', 24, 'H808'),
-('Administración de Servidores', 'Windows Server', 'Configuración y administración de servidores Windows.', 20, 'I909'),
-('Telecomunicaciones', 'Tecnologías 5G', 'Estudio de las tecnologías y aplicaciones de las redes 5G.', 26, 'J101'),
-('Seguridad en Redes', 'Firewalls', 'Implementación y configuración de firewalls en redes.', 25, 'K202'),
-('IoT', 'Internet de las Cosas', 'Introducción al Internet de las Cosas y sus aplicaciones.', 20, 'L303'),
-('Programación de Sistemas', 'C y C++', 'Desarrollo de software de sistemas utilizando C y C++.', 18, 'M404'),
-('Administración de Redes', 'Cisco', 'Configuración de redes utilizando tecnologías y dispositivos Cisco.', 30, 'N505'),
-('Ingeniería de Software', 'Metodologías Ágiles', 'Uso de metodologías ágiles en el desarrollo de software.', 15, 'O606'),
-('Seguridad en la Nube', 'AWS', 'Implementación de seguridad en servicios de Amazon Web Services.', 25, 'P707'),
-('Big Data', 'Hadoop', 'Introducción a las tecnologías Big Data y uso de Hadoop.', 28, 'Q808'),
+('Redes de Computadoras', 'Protocolos de Comunicaciï¿½n', 'Estudio de los protocolos bï¿½sicos de comunicaciï¿½n en redes.', 20, 'A101'),
+('Programaciï¿½n Avanzada', 'Python para Redes', 'Uso de Python para la gestiï¿½n y automatizaciï¿½n de redes.', 25, 'B202'),
+('Seguridad Informï¿½tica', 'Criptografï¿½a', 'Introducciï¿½n a la criptografï¿½a y su aplicaciï¿½n en la seguridad de la informaciï¿½n.', 15, 'C303'),
+('Sistemas Operativos', 'Linux', 'Administraciï¿½n y uso de sistemas operativos basados en Linux.', 18, 'D404'),
+('Bases de Datos', 'SQL', 'Fundamentos y uso del lenguaje SQL para la gestiï¿½n de bases de datos.', 22, 'E505'),
+('Desarrollo Web', 'HTML y CSS', 'Introducciï¿½n al desarrollo de pï¿½ginas web con HTML y CSS.', 30, 'F606'),
+('Redes Inalï¿½mbricas', 'Wi-Fi', 'Conceptos y configuraciï¿½n de redes inalï¿½mbricas Wi-Fi.', 28, 'G707'),
+('Programaciï¿½n', 'JavaScript', 'Fundamentos de la programaciï¿½n en JavaScript.', 24, 'H808'),
+('Administraciï¿½n de Servidores', 'Windows Server', 'Configuraciï¿½n y administraciï¿½n de servidores Windows.', 20, 'I909'),
+('Telecomunicaciones', 'Tecnologï¿½as 5G', 'Estudio de las tecnologï¿½as y aplicaciones de las redes 5G.', 26, 'J101'),
+('Seguridad en Redes', 'Firewalls', 'Implementaciï¿½n y configuraciï¿½n de firewalls en redes.', 25, 'K202'),
+('IoT', 'Internet de las Cosas', 'Introducciï¿½n al Internet de las Cosas y sus aplicaciones.', 20, 'L303'),
+('Programaciï¿½n de Sistemas', 'C y C++', 'Desarrollo de software de sistemas utilizando C y C++.', 18, 'M404'),
+('Administraciï¿½n de Redes', 'Cisco', 'Configuraciï¿½n de redes utilizando tecnologï¿½as y dispositivos Cisco.', 30, 'N505'),
+('Ingenierï¿½a de Software', 'Metodologï¿½as ï¿½giles', 'Uso de metodologï¿½as ï¿½giles en el desarrollo de software.', 15, 'O606'),
+('Seguridad en la Nube', 'AWS', 'Implementaciï¿½n de seguridad en servicios de Amazon Web Services.', 25, 'P707'),
+('Big Data', 'Hadoop', 'Introducciï¿½n a las tecnologï¿½as Big Data y uso de Hadoop.', 28, 'Q808'),
 ('Inteligencia Artificial', 'Machine Learning', 'Fundamentos y aplicaciones del Machine Learning.', 22, 'R909'),
-('Programación Móvil', 'Android', 'Desarrollo de aplicaciones móviles para Android.', 30, 'S101'),
-('Virtualización', 'VMware', 'Implementación y gestión de entornos virtualizados con VMware.', 15, 'T202'),
-('Redes de Computadoras II', 'IPv6', 'Transición y configuración de redes utilizando IPv6.', 18, 'U303'),
-('Seguridad Informática Avanzada', 'Penetration Testing', 'Técnicas y herramientas para realizar pruebas de penetración.', 20, 'V404'),
-('Programación para Redes', 'Sockets en Python', 'Desarrollo de aplicaciones de red utilizando sockets en Python.', 25, 'W505'),
-('Computación en la Nube', 'Azure', 'Uso de servicios de Microsoft Azure para soluciones en la nube.', 20, 'X606'),
-('Seguridad de Aplicaciones Web', 'OWASP', 'Mejores prácticas y herramientas para la seguridad de aplicaciones web según OWASP.', 18, 'Y707'),
-('Blockchain', 'Tecnologías Blockchain', 'Introducción a las tecnologías blockchain y sus aplicaciones.', 30, 'Z808'),
-('Redes Privadas Virtuales', 'VPN', 'Configuración y uso de redes privadas virtuales (VPN).', 15, 'A909'),
-('Ingeniería de Software II', 'DevOps', 'Prácticas y herramientas DevOps para la integración continua.', 25, 'B101'),
-('Computación Gráfica', 'OpenGL', 'Desarrollo de aplicaciones gráficas utilizando OpenGL.', 28, 'C202'),
+('Programaciï¿½n Mï¿½vil', 'Android', 'Desarrollo de aplicaciones mï¿½viles para Android.', 30, 'S101'),
+('Virtualizaciï¿½n', 'VMware', 'Implementaciï¿½n y gestiï¿½n de entornos virtualizados con VMware.', 15, 'T202'),
+('Redes de Computadoras II', 'IPv6', 'Transiciï¿½n y configuraciï¿½n de redes utilizando IPv6.', 18, 'U303'),
+('Seguridad Informï¿½tica Avanzada', 'Penetration Testing', 'Tï¿½cnicas y herramientas para realizar pruebas de penetraciï¿½n.', 20, 'V404'),
+('Programaciï¿½n para Redes', 'Sockets en Python', 'Desarrollo de aplicaciones de red utilizando sockets en Python.', 25, 'W505'),
+('Computaciï¿½n en la Nube', 'Azure', 'Uso de servicios de Microsoft Azure para soluciones en la nube.', 20, 'X606'),
+('Seguridad de Aplicaciones Web', 'OWASP', 'Mejores prï¿½cticas y herramientas para la seguridad de aplicaciones web segï¿½n OWASP.', 18, 'Y707'),
+('Blockchain', 'Tecnologï¿½as Blockchain', 'Introducciï¿½n a las tecnologï¿½as blockchain y sus aplicaciones.', 30, 'Z808'),
+('Redes Privadas Virtuales', 'VPN', 'Configuraciï¿½n y uso de redes privadas virtuales (VPN).', 15, 'A909'),
+('Ingenierï¿½a de Software II', 'DevOps', 'Prï¿½cticas y herramientas DevOps para la integraciï¿½n continua.', 25, 'B101'),
+('Computaciï¿½n Grï¿½fica', 'OpenGL', 'Desarrollo de aplicaciones grï¿½ficas utilizando OpenGL.', 28, 'C202'),
 ('Sistemas Distribuidos', 'Microservicios', 'Arquitectura y desarrollo de sistemas distribuidos utilizando microservicios.', 22, 'D303');
 INSERT INTO Grupo (grupo) VALUES
 ('Grupo A'),
@@ -170,83 +170,83 @@ INSERT INTO Grupo (grupo) VALUES
 ('Grupo CC'),
 ('Grupo DD');
 INSERT INTO UnidadAcademica (unidad_academica) VALUES
-('Ingeniería en Telemática'),
-('Ingeniería en Sistemas Computacionales'),
-('Ingeniería Electrónica'),
-('Ingeniería Mecatrónica'),
-('Ingeniería Industrial'),
-('Ingeniería Civil'),
-('Ingeniería Mecánica'),
-('Ingeniería Eléctrica'),
-('Ingeniería en Energías Renovables'),
-('Ingeniería Biomédica'),
-('Ingeniería en Tecnologías de la Información'),
-('Ingeniería en Telecomunicaciones'),
-('Ingeniería en Software'),
-('Ingeniería Química'),
-('Ingeniería Ambiental'),
-('Ingeniería en Alimentos'),
-('Ingeniería en Materiales'),
-('Ingeniería en Nanotecnología'),
-('Ingeniería Geológica'),
-('Ingeniería Petrolera'),
-('Ingeniería Aeronáutica'),
-('Ingeniería en Transporte'),
-('Ingeniería Agrónoma'),
-('Ingeniería Forestal'),
-('Ingeniería Hidráulica'),
-('Ingeniería en Minas'),
-('Ingeniería Textil'),
-('Ingeniería en Computación'),
-('Ingeniería en Cibernética'),
-('Ingeniería en Robótica');
+('Ingenierï¿½a en Telemï¿½tica'),
+('Ingenierï¿½a en Sistemas Computacionales'),
+('Ingenierï¿½a Electrï¿½nica'),
+('Ingenierï¿½a Mecatrï¿½nica'),
+('Ingenierï¿½a Industrial'),
+('Ingenierï¿½a Civil'),
+('Ingenierï¿½a Mecï¿½nica'),
+('Ingenierï¿½a Elï¿½ctrica'),
+('Ingenierï¿½a en Energï¿½as Renovables'),
+('Ingenierï¿½a Biomï¿½dica'),
+('Ingenierï¿½a en Tecnologï¿½as de la Informaciï¿½n'),
+('Ingenierï¿½a en Telecomunicaciones'),
+('Ingenierï¿½a en Software'),
+('Ingenierï¿½a Quï¿½mica'),
+('Ingenierï¿½a Ambiental'),
+('Ingenierï¿½a en Alimentos'),
+('Ingenierï¿½a en Materiales'),
+('Ingenierï¿½a en Nanotecnologï¿½a'),
+('Ingenierï¿½a Geolï¿½gica'),
+('Ingenierï¿½a Petrolera'),
+('Ingenierï¿½a Aeronï¿½utica'),
+('Ingenierï¿½a en Transporte'),
+('Ingenierï¿½a Agrï¿½noma'),
+('Ingenierï¿½a Forestal'),
+('Ingenierï¿½a Hidrï¿½ulica'),
+('Ingenierï¿½a en Minas'),
+('Ingenierï¿½a Textil'),
+('Ingenierï¿½a en Computaciï¿½n'),
+('Ingenierï¿½a en Cibernï¿½tica'),
+('Ingenierï¿½a en Robï¿½tica');
 INSERT INTO Asesor (boleta_asesor, nombre_asesor, apellido_asesor, descripcion) VALUES
-('A0001', 'Juan', 'Pérez', 'Especialista en redes de computadoras y seguridad informática.'),
-('A0002', 'María', 'García', 'Experta en programación en Python y desarrollo web.'),
-('A0003', 'Luis', 'Martínez', 'Consultor en telecomunicaciones y tecnologías 5G.'),
-('A0004', 'Ana', 'Rodríguez', 'Profesora de bases de datos y administración de sistemas.'),
-('A0005', 'Carlos', 'López', 'Ingeniero de software con experiencia en metodologías ágiles.'),
-('A0006', 'Elena', 'Hernández', 'Especialista en seguridad informática y criptografía.'),
-('A0007', 'Jorge', 'González', 'Experto en sistemas operativos y virtualización.'),
-('A0008', 'Laura', 'Sánchez', 'Desarrolladora de aplicaciones móviles y tecnologías IoT.'),
-('A0009', 'Pedro', 'Ramírez', 'Consultor en big data y análisis de datos.'),
-('A0010', 'Lucía', 'Cruz', 'Profesora de inteligencia artificial y machine learning.'),
-('A0011', 'Miguel', 'Torres', 'Especialista en administración de redes y dispositivos Cisco.'),
-('A0012', 'Sofía', 'Flores', 'Ingeniera en telecomunicaciones con enfoque en redes inalámbricas.'),
-('A0013', 'Fernando', 'Jiménez', 'Experto en programación avanzada y desarrollo de sistemas.'),
+('A0001', 'Juan', 'Pï¿½rez', 'Especialista en redes de computadoras y seguridad informï¿½tica.'),
+('A0002', 'Marï¿½a', 'Garcï¿½a', 'Experta en programaciï¿½n en Python y desarrollo web.'),
+('A0003', 'Luis', 'Martï¿½nez', 'Consultor en telecomunicaciones y tecnologï¿½as 5G.'),
+('A0004', 'Ana', 'Rodrï¿½guez', 'Profesora de bases de datos y administraciï¿½n de sistemas.'),
+('A0005', 'Carlos', 'Lï¿½pez', 'Ingeniero de software con experiencia en metodologï¿½as ï¿½giles.'),
+('A0006', 'Elena', 'Hernï¿½ndez', 'Especialista en seguridad informï¿½tica y criptografï¿½a.'),
+('A0007', 'Jorge', 'Gonzï¿½lez', 'Experto en sistemas operativos y virtualizaciï¿½n.'),
+('A0008', 'Laura', 'Sï¿½nchez', 'Desarrolladora de aplicaciones mï¿½viles y tecnologï¿½as IoT.'),
+('A0009', 'Pedro', 'Ramï¿½rez', 'Consultor en big data y anï¿½lisis de datos.'),
+('A0010', 'Lucï¿½a', 'Cruz', 'Profesora de inteligencia artificial y machine learning.'),
+('A0011', 'Miguel', 'Torres', 'Especialista en administraciï¿½n de redes y dispositivos Cisco.'),
+('A0012', 'Sofï¿½a', 'Flores', 'Ingeniera en telecomunicaciones con enfoque en redes inalï¿½mbricas.'),
+('A0013', 'Fernando', 'Jimï¿½nez', 'Experto en programaciï¿½n avanzada y desarrollo de sistemas.'),
 ('A0014', 'Isabel', 'Morales', 'Consultora en seguridad en la nube y servicios AWS.'),
 ('A0015', 'Ricardo', 'Ortiz', 'Ingeniero de software con experiencia en DevOps.'),
-('A0016', 'Patricia', 'Gutiérrez', 'Profesora de computación gráfica y tecnologías de visualización.'),
-('A0017', 'Héctor', 'Ramos', 'Especialista en seguridad de aplicaciones web y OWASP.'),
-('A0018', 'Sandra', 'Ruiz', 'Consultora en blockchain y tecnologías distribuidas.'),
-('A0019', 'Alberto', 'Muñoz', 'Ingeniero de redes con experiencia en IPv6 y VPN.'),
+('A0016', 'Patricia', 'Gutiï¿½rrez', 'Profesora de computaciï¿½n grï¿½fica y tecnologï¿½as de visualizaciï¿½n.'),
+('A0017', 'Hï¿½ctor', 'Ramos', 'Especialista en seguridad de aplicaciones web y OWASP.'),
+('A0018', 'Sandra', 'Ruiz', 'Consultora en blockchain y tecnologï¿½as distribuidas.'),
+('A0019', 'Alberto', 'Muï¿½oz', 'Ingeniero de redes con experiencia en IPv6 y VPN.'),
 ('A0020', 'Daniela', 'Paredes', 'Desarrolladora en sistemas distribuidos y microservicios.'),
-('A0021', 'Raúl', 'Castillo', 'Experto en administración de servidores y sistemas operativos.'),
-('A0022', 'Mónica', 'Vargas', 'Consultora en ingeniería de software y metodologías ágiles.'),
-('A0023', 'Francisco', 'Delgado', 'Ingeniero en big data y análisis de datos.'),
-('A0024', 'Gabriela', 'Ríos', 'Especialista en inteligencia artificial y machine learning.'),
-('A0025', 'Tomás', 'Aguilar', 'Consultor en telecomunicaciones y redes 5G.'),
-('A0026', 'Verónica', 'Mendoza', 'Desarrolladora en aplicaciones móviles y tecnologías IoT.'),
-('A0027', 'Gustavo', 'Medina', 'Especialista en sistemas operativos y virtualización.'),
-('A0028', 'Beatriz', 'Soto', 'Profesora de bases de datos y administración de sistemas.'),
-('A0029', 'Eduardo', 'Peña', 'Ingeniero de software con experiencia en metodologías ágiles.'),
-('A0030', 'Claudia', 'Navarro', 'Experta en seguridad informática y criptografía.');
+('A0021', 'Raï¿½l', 'Castillo', 'Experto en administraciï¿½n de servidores y sistemas operativos.'),
+('A0022', 'Mï¿½nica', 'Vargas', 'Consultora en ingenierï¿½a de software y metodologï¿½as ï¿½giles.'),
+('A0023', 'Francisco', 'Delgado', 'Ingeniero en big data y anï¿½lisis de datos.'),
+('A0024', 'Gabriela', 'Rï¿½os', 'Especialista en inteligencia artificial y machine learning.'),
+('A0025', 'Tomï¿½s', 'Aguilar', 'Consultor en telecomunicaciones y redes 5G.'),
+('A0026', 'Verï¿½nica', 'Mendoza', 'Desarrolladora en aplicaciones mï¿½viles y tecnologï¿½as IoT.'),
+('A0027', 'Gustavo', 'Medina', 'Especialista en sistemas operativos y virtualizaciï¿½n.'),
+('A0028', 'Beatriz', 'Soto', 'Profesora de bases de datos y administraciï¿½n de sistemas.'),
+('A0029', 'Eduardo', 'Peï¿½a', 'Ingeniero de software con experiencia en metodologï¿½as ï¿½giles.'),
+('A0030', 'Claudia', 'Navarro', 'Experta en seguridad informï¿½tica y criptografï¿½a.');
 INSERT INTO UnidadAprendizaje (unidad_aprendizaje) VALUES
-('Protocolos de Comunicación'),
+('Protocolos de Comunicaciï¿½n'),
 ('Python para Redes'),
-('Criptografía'),
+('Criptografï¿½a'),
 ('Linux'),
 ('SQL'),
 ('HTML y CSS'),
 ('Wi-Fi'),
 ('JavaScript'),
 ('Windows Server'),
-('Tecnologías 5G'),
+('Tecnologï¿½as 5G'),
 ('Firewalls'),
 ('Internet de las Cosas'),
 ('C y C++'),
 ('Cisco'),
-('Metodologías Ágiles'),
+('Metodologï¿½as ï¿½giles'),
 ('AWS'),
 ('Hadoop'),
 ('Machine Learning'),
@@ -326,36 +326,36 @@ INSERT INTO NotificacionAsesoria (fecha_notificacionAsesoria, id_notificacion, i
 ('2024-06-30', 30, 30);
 INSERT INTO Usuario (boleta_usuario, password_usuario, nombre_usuario, apellido_usuario, correo_usuario, id_unidadAcademica, id_grupo)
 VALUES
-('U0001', 'password1', 'Juan', 'Pérez', 'juan.perez@example.com', 1, 1),
-('U0002', 'password2', 'María', 'García', 'maria.garcia@example.com', 2, 2),
-('U0003', 'password3', 'Carlos', 'Martínez', 'carlos.martinez@example.com', 3, 3),
-('U0004', 'password4', 'Laura', 'Hernández', 'laura.hernandez@example.com', 4, 4),
-('U0005', 'password5', 'Pedro', 'López', 'pedro.lopez@example.com', 5, 5),
+('U0001', 'password1', 'Juan', 'Pï¿½rez', 'juan.perez@example.com', 1, 1),
+('U0002', 'password2', 'Marï¿½a', 'Garcï¿½a', 'maria.garcia@example.com', 2, 2),
+('U0003', 'password3', 'Carlos', 'Martï¿½nez', 'carlos.martinez@example.com', 3, 3),
+('U0004', 'password4', 'Laura', 'Hernï¿½ndez', 'laura.hernandez@example.com', 4, 4),
+('U0005', 'password5', 'Pedro', 'Lï¿½pez', 'pedro.lopez@example.com', 5, 5),
 ('U0006', 'password6', 'Ana', 'Torres', 'ana.torres@example.com', 1, 2),
-('U0007', 'password7', 'Javier', 'Díaz', 'javier.diaz@example.com', 2, 3),
-('U0008', 'password8', 'Sofía', 'Jiménez', 'sofia.jimenez@example.com', 3, 4),
-('U0009', 'password9', 'Diego', 'Gutiérrez', 'diego.gutierrez@example.com', 4, 5),
-('U0010', 'password10', 'Mónica', 'Vázquez', 'monica.vazquez@example.com', 5, 1),
-('U0011', 'password11', 'Raúl', 'Reyes', 'raul.reyes@example.com', 1, 3),
-('U0012', 'password12', 'Lucía', 'Mendoza', 'lucia.mendoza@example.com', 2, 4),
+('U0007', 'password7', 'Javier', 'Dï¿½az', 'javier.diaz@example.com', 2, 3),
+('U0008', 'password8', 'Sofï¿½a', 'Jimï¿½nez', 'sofia.jimenez@example.com', 3, 4),
+('U0009', 'password9', 'Diego', 'Gutiï¿½rrez', 'diego.gutierrez@example.com', 4, 5),
+('U0010', 'password10', 'Mï¿½nica', 'Vï¿½zquez', 'monica.vazquez@example.com', 5, 1),
+('U0011', 'password11', 'Raï¿½l', 'Reyes', 'raul.reyes@example.com', 1, 3),
+('U0012', 'password12', 'Lucï¿½a', 'Mendoza', 'lucia.mendoza@example.com', 2, 4),
 ('U0013', 'password13', 'Pablo', 'Castro', 'pablo.castro@example.com', 3, 5),
 ('U0014', 'password14', 'Elena', 'Ortega', 'elena.ortega@example.com', 4, 1),
-('U0015', 'password15', 'Gonzalo', 'Sánchez', 'gonzalo.sanchez@example.com', 5, 2),
+('U0015', 'password15', 'Gonzalo', 'Sï¿½nchez', 'gonzalo.sanchez@example.com', 5, 2),
 ('U0016', 'password16', 'Valeria', 'Delgado', 'valeria.delgado@example.com', 1, 4),
-('U0017', 'password17', 'Martín', 'Cruz', 'martin.cruz@example.com', 2, 5),
+('U0017', 'password17', 'Martï¿½n', 'Cruz', 'martin.cruz@example.com', 2, 5),
 ('U0018', 'password18', 'Luisa', 'Morales', 'luisa.morales@example.com', 3, 1),
-('U0019', 'password19', 'Roberto', 'Núñez', 'roberto.nunez@example.com', 4, 2),
+('U0019', 'password19', 'Roberto', 'Nï¿½ï¿½ez', 'roberto.nunez@example.com', 4, 2),
 ('U0020', 'password20', 'Paula', 'Rojas', 'paula.rojas@example.com', 5, 3),
 ('U0021', 'password21', 'Jorge', 'Guerrero', 'jorge.guerrero@example.com', 1, 5),
 ('U0022', 'password22', 'Carolina', 'Herrera', 'carolina.herrera@example.com', 2, 1),
 ('U0023', 'password23', 'Mateo', 'Cabrera', 'mateo.cabrera@example.com', 3, 2),
-('U0024', 'password24', 'Renata', 'Pérez', 'renata.perez@example.com', 4, 3),
-('U0025', 'password25', 'Héctor', 'Santana', 'hector.santana@example.com', 5, 4),
-('U0026', 'password26', 'Alejandra', 'Cortés', 'alejandra.cortes@example.com', 1, 1),
-('U0027', 'password27', 'Andrés', 'Vega', 'andres.vega@example.com', 2, 2),
+('U0024', 'password24', 'Renata', 'Pï¿½rez', 'renata.perez@example.com', 4, 3),
+('U0025', 'password25', 'Hï¿½ctor', 'Santana', 'hector.santana@example.com', 5, 4),
+('U0026', 'password26', 'Alejandra', 'Cortï¿½s', 'alejandra.cortes@example.com', 1, 1),
+('U0027', 'password27', 'Andrï¿½s', 'Vega', 'andres.vega@example.com', 2, 2),
 ('U0028', 'password28', 'Fernanda', 'Molina', 'fernanda.molina@example.com', 3, 3),
 ('U0029', 'password29', 'Gabriel', 'Ortiz', 'gabriel.ortiz@example.com', 4, 4),
-('U0030', 'password30', 'Verónica', 'Guzmán', 'veronica.guzman@example.com', 5, 5);
+('U0030', 'password30', 'Verï¿½nica', 'Guzmï¿½n', 'veronica.guzman@example.com', 5, 5);
 INSERT INTO ListaAlumno (fecha_inicioAsesoria, boleta_usuario, id_asesoria) VALUES
 ('2024-06-01', 'U0001', 1),
 ('2024-06-02', 'U0002', 2),
@@ -535,13 +535,13 @@ END;
 SELECT * FROM AuditoriaCambios
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- Crea disparador para evitar la eliminación de usuarios
+-- Crea disparador para evitar la eliminaciï¿½n de usuarios
 CREATE TRIGGER Prevent_Delete_Usuario
 ON Usuario
 INSTEAD OF DELETE
 AS
 BEGIN
-    RAISERROR('No está permitido eliminar usuarios.', 16, 1);
+    RAISERROR('No estï¿½ permitido eliminar usuarios.', 16, 1);
 END;
 -- Desactivar el disparador Prevent_Delete_Usuario
 DISABLE TRIGGER Prevent_Delete_Usuario ON Usuario;
@@ -562,19 +562,19 @@ BEGIN
     DECLARE @id_asesoria INT;
     DECLARE @boleta_usuario VARCHAR(10);
 
-    -- Verificar duplicados en el caso de una inserción
+    -- Verificar duplicados en el caso de una inserciï¿½n
     IF EXISTS (SELECT * FROM inserted)
     BEGIN
         SELECT @id_asesoria = id_asesoria, @boleta_usuario = boleta_usuario FROM inserted;
 
-        -- Verificar si el usuario ya está registrado en la misma asesoría
+        -- Verificar si el usuario ya estï¿½ registrado en la misma asesorï¿½a
         IF EXISTS (
             SELECT 1
             FROM ListaAlumno
             WHERE id_asesoria = @id_asesoria AND boleta_usuario = @boleta_usuario AND id_listaAlumno <> (SELECT MAX(id_listaAlumno) FROM inserted)
         )
         BEGIN
-            RAISERROR('El usuario ya está registrado en esta asesoría.', 16, 1);
+            RAISERROR('El usuario ya estï¿½ registrado en esta asesorï¿½a.', 16, 1);
             ROLLBACK TRANSACTION;
             RETURN;
         END;
@@ -623,16 +623,16 @@ CREATE PROCEDURE RegistrarUsuario
     @id_grupo INT
 AS
 BEGIN
-    -- Iniciar una transacción
+    -- Iniciar una transacciï¿½n
     BEGIN TRANSACTION;
     
     -- Declarar una variable para almacenar errores
     DECLARE @ErrorMsg NVARCHAR(4000);
 
-    -- Verificar si la unidad académica existe
+    -- Verificar si la unidad acadï¿½mica existe
     IF NOT EXISTS (SELECT 1 FROM UnidadAcademica WHERE id_unidadAcademica = @id_unidadAcademica)
     BEGIN
-        SET @ErrorMsg = 'La unidad académica no existe.';
+        SET @ErrorMsg = 'La unidad acadï¿½mica no existe.';
         RAISERROR (@ErrorMsg, 16, 1);
         ROLLBACK TRANSACTION;
         RETURN;
@@ -662,7 +662,7 @@ BEGIN
         VALUES (@boleta_usuario, @password_usuario, @nombre_usuario, @apellido_usuario, @correo_usuario, @id_unidadAcademica, @id_grupo);
     END
 
-    -- Confirmar la transacción
+    -- Confirmar la transacciï¿½n
     COMMIT TRANSACTION;
 END;
 
@@ -671,7 +671,7 @@ EXEC RegistrarUsuario
     @boleta_usuario = 'U0000',
     @password_usuario = 'password123',
     @nombre_usuario = 'Alberto',
-    @apellido_usuario = 'López',
+    @apellido_usuario = 'Lï¿½pez',
     @correo_usuario = 'carlos.lopez@example.com',
     @id_unidadAcademica = 4,
     @id_grupo = 8;
@@ -689,20 +689,20 @@ BEGIN
         RETURN;
     END;
 
-    -- Verificar si la asesoría existe y tiene cupo disponible
+    -- Verificar si la asesorï¿½a existe y tiene cupo disponible
     DECLARE @cupo_disponible INT;
     SELECT @cupo_disponible = cupo_disponible FROM InformacionAsesoria WHERE id_asesoria = @id_asesoria;
 
     IF @cupo_disponible <= 0
     BEGIN
-        RAISERROR('La asesoría no tiene cupo disponible.', 16, 1);
+        RAISERROR('La asesorï¿½a no tiene cupo disponible.', 16, 1);
         RETURN;
     END;
 
-    -- Verificar si la combinación de id_asesoria y fecha_inicioAsesoria es válida
+    -- Verificar si la combinaciï¿½n de id_asesoria y fecha_inicioAsesoria es vï¿½lida
     IF NOT EXISTS (SELECT 1 FROM ListaAlumno WHERE id_asesoria = @id_asesoria AND fecha_inicioAsesoria = @fecha_inicioAsesoria)
     BEGIN
-        RAISERROR('La combinación de id_asesoria y fecha_inicioAsesoria no coincide con los registros existentes.', 16, 1);
+        RAISERROR('La combinaciï¿½n de id_asesoria y fecha_inicioAsesoria no coincide con los registros existentes.', 16, 1);
         RETURN;
     END;
 
@@ -710,7 +710,7 @@ BEGIN
     INSERT INTO ListaAlumno (fecha_inicioAsesoria, boleta_usuario, id_asesoria)
     VALUES (@fecha_inicioAsesoria, @boleta_usuario, @id_asesoria);
 
-    PRINT 'Usuario registrado exitosamente en la asesoría.';
+    PRINT 'Usuario registrado exitosamente en la asesorï¿½a.';
 END;
 
 EXEC RegistrarUsuarioEnAsesoria
