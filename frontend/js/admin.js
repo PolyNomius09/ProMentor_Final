@@ -43,52 +43,50 @@ document.getElementById('gestionar-usuarios-btn').addEventListener('click', func
         });
 });
 
-document.getElementById('gestionar-asesoria-btn').addEventListener('click', function() {
-    document.querySelector('.welcome-section').classList.add('hidden');
-    document.getElementById('gestionar-asesorias').classList.remove('hidden');
-    document.getElementById('gestionar-usuarios').classList.add('hidden');
-    document.querySelector('.buttons').classList.add('hidden');
 
-    const baseUrl = "http://localhost:3000/api";
+    document.getElementById('gestionar-asesoria-btn').addEventListener('click', function() {
+        document.querySelector('.welcome-section').classList.add('hidden');
+        document.getElementById('gestionar-asesorias').classList.remove('hidden');
+        document.getElementById('gestionar-usuarios').classList.add('hidden');
+        document.querySelector('.buttons').classList.add('hidden');
 
-    fetch(baseUrl + '/subjects')
-        .then(response => response.json())
-        .then(data => {
-            const table = document.getElementById('subject-table');
-            table.innerHTML = `
-                <tr>
-                    <th>Nombre</th>
-                    <th>Grupo</th>
-                    <th>Cupo</th>
-                    <th>Descripción</th>
-                    <th>Aula</th>
-                    <th>Tema</th>
-                    <th>Horario</th>
-                    <th>Acciones</th>
-                </tr>`;
-            data.forEach(subject => {
-                const row = table.insertRow();
-                row.insertCell(0).innerText = subject.nombre;
-                row.insertCell(1).innerText = subject.grupo;
-                row.insertCell(2).innerText = subject.cupo;
-                row.insertCell(3).innerText = subject.descripcion;
-                row.insertCell(4).innerText = subject.aula;
-                row.insertCell(5).innerText = subject.tema;
-                row.insertCell(6).innerText = subject.horario;
-                const actionsCell = row.insertCell(7);
-                const deleteBtn = document.createElement('button');
-                deleteBtn.innerText = 'Eliminar';
-                deleteBtn.addEventListener('click', function() {
-                    // Aquí puedes implementar la lógica para eliminar una materia si lo deseas
+        const baseUrl = "http://localhost:3000/api";
+
+        fetch(baseUrl + '/materia')
+            .then(response => response.json())
+            .then(data => {
+                const table = document.getElementById('subject-table');
+                table.innerHTML = `
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tema</th>
+                        <th>Descripción</th>
+                        <th>Cupo Disponible</th>
+                        <th>Aula</th>
+                        <th>Acciones</th>
+                    </tr>`;
+                data.forEach(subject => {
+                    const row = table.insertRow();
+                    row.insertCell(0).innerText = subject.nombre_asesoria;
+                    row.insertCell(1).innerText = subject.tema_asesoria;
+                    row.insertCell(2).innerText = subject.descripcion_asesoria;
+                    row.insertCell(3).innerText = subject.cupo_disponible;
+                    row.insertCell(4).innerText = subject.aula_asesoria;
+                    const actionsCell = row.insertCell(5);
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.innerText = 'Eliminar';
+                    deleteBtn.addEventListener('click', function() {
+                        // Aquí puedes implementar la lógica para eliminar una materia si lo deseas
+                    });
+                    actionsCell.appendChild(deleteBtn);
                 });
-                actionsCell.appendChild(deleteBtn);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error al cargar materias');
             });
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Error al cargar materias');
-        });
-});
+    });
+ 
 
 document.querySelectorAll('.cancel-btn').forEach(button => {
     button.addEventListener('click', function() {
@@ -216,3 +214,57 @@ document.getElementById('subject-form').addEventListener('submit', function(even
         alert('Error al guardar la materia');
     });
 });
+
+//eliminar usuario
+
+document.addEventListener('DOMContentLoaded', () => {
+  const deleteButtons = document.querySelectorAll('.delete-user-button');
+
+  deleteButtons.forEach(button => {
+    button.addEventListener('click', async (event) => {
+      const userId = event.target.dataset.userId;
+
+      if (!userId) {
+        alert('User ID not found');
+        return;
+      }
+
+      try {
+        const response = await fetch(`/usuario/${userId}`, {
+          method: 'DELETE',
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          alert(result.msg);
+          // Remove the user row from the UI or reload the page
+          document.querySelector(`#user-row-${userId}`).remove();
+        } else {
+          alert(result.msg || 'Failed to delete user');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error deleting user');
+      }
+    });
+  });
+});
+
+document.querySelector('.icon-button-menu').addEventListener('click', function() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('hidden');
+    sidebar.style.display = sidebar.classList.contains('hidden') ? 'none' : 'block';
+});
+
+document.getElementById('close-sidebar-btn').addEventListener('click', function() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.add('hidden');
+    sidebar.style.display = 'none';
+});
+
+document.getElementById('logout-btn').addEventListener('click', function() {
+    window.location.href = 'index.html';
+});
+
+

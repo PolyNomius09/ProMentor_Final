@@ -61,5 +61,23 @@ export const createNewUser = async (req, res) => {
 };
 
 export const deleteUser = async (req, res) => {
-    res.json("asdasd")
+  const { id } = req.params;
+
+  if (!id) {
+    return res.status(400).json({ msg: "Bad Request. Please provide a user ID" });
+  }
+
+  try {
+    const pool = await getConnection();
+
+    await pool
+      .request()
+      .input("id", sql.Int, id)
+      .query("DELETE FROM users WHERE id = @id");
+
+    res.json({ msg: "User deleted successfully" });
+  } catch (error) {
+    res.status(500);
+    res.send(error.message);
+  }
 };

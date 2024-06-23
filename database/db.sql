@@ -1,4 +1,4 @@
-Use Promentor
+Use Promentor1
 -- Crear tabla de InformacionAsesoria
 CREATE TABLE InformacionAsesoria (
   id_asesoria INT PRIMARY KEY IDENTITY(1,1),

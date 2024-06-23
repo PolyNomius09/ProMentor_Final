@@ -19,10 +19,7 @@
       <img src="/frontend/img/logo.png" alt="ProMentor Logo" class="logo">
     </div>
     <div class="header-right">
-      <button class="icon-button">
-        <img src="/frontend/img/noti.png" alt="Notifications">
-      </button>
-      <button class="icon-button">
+      <button class="icon-button-menu">
         <img src="/frontend/img/menu.png" alt="Menu">
       </button>
     </div>
@@ -57,6 +54,29 @@
             <th>Unidad Académica</th>
             <th>Grupo</th>
             <th>Acciones</th>
+          </tr>
+          <!-- Ejemplo de usuario -->
+          <tr id="user-row-1">
+            <td>202101</td>
+            <td>Juan</td>
+            <td>Pérez</td>
+            <td>juan@example.com</td>
+            <td>Ingeniería</td>
+            <td>101</td>
+            <td>
+              <button class="delete-user-button" data-user-id="1">Eliminar</button>
+            </td>
+          </tr>
+          <tr id="user-row-2">
+            <td>202102</td>
+            <td>María</td>
+            <td>García</td>
+            <td>maria@example.com</td>
+            <td>Arquitectura</td>
+            <td>102</td>
+            <td>
+              <button class="delete-user-button" data-user-id="2">Eliminar</button>
+            </td>
           </tr>
         </table>
       </div>
@@ -150,6 +170,12 @@
         </div>
       </form>
     </div>
+  </div>
+
+  <!-- Barra lateral -->
+  <div id="sidebar" class="sidebar hidden">
+    <button id="close-sidebar-btn">Cerrar</button>
+    <button id="logout-btn">Cerrar sesión</button>
   </div>
 
   <script src="/frontend/js/admin.js"></script>
