@@ -43,8 +43,7 @@ document.getElementById('gestionar-usuarios-btn').addEventListener('click', func
         });
 });
 
-
-    document.getElementById('gestionar-asesoria-btn').addEventListener('click', function() {
+document.getElementById('gestionar-asesoria-btn').addEventListener('click', function() {
         document.querySelector('.welcome-section').classList.add('hidden');
         document.getElementById('gestionar-asesorias').classList.remove('hidden');
         document.getElementById('gestionar-usuarios').classList.add('hidden');
@@ -76,7 +75,23 @@ document.getElementById('gestionar-usuarios-btn').addEventListener('click', func
                     const deleteBtn = document.createElement('button');
                     deleteBtn.innerText = 'Eliminar';
                     deleteBtn.addEventListener('click', function() {
-                        // Aquí puedes implementar la lógica para eliminar una materia si lo deseas
+                        if (confirm(`¿Estás seguro de que quieres eliminar la materia ${subject.nombre_asesoria}?`)) {
+                            fetch(baseUrl + '/materia/' + subject.id_asesoria, {
+                                method: 'DELETE'
+                            })
+                            .then(response => {
+                                if (response.ok) {
+                                    alert('Materia eliminada exitosamente');
+                                    row.remove();
+                                } else {
+                                    alert('Error al eliminar la materia');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                                alert('Error al eliminar la materia');
+                            });
+                        }
                     });
                     actionsCell.appendChild(deleteBtn);
                 });
@@ -86,7 +101,6 @@ document.getElementById('gestionar-usuarios-btn').addEventListener('click', func
                 alert('Error al cargar materias');
             });
     });
- 
 
 document.querySelectorAll('.cancel-btn').forEach(button => {
     button.addEventListener('click', function() {
@@ -266,5 +280,3 @@ document.getElementById('close-sidebar-btn').addEventListener('click', function(
 document.getElementById('logout-btn').addEventListener('click', function() {
     window.location.href = 'index.html';
 });
-
-
